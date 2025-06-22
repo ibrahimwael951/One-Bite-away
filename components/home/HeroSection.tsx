@@ -32,7 +32,7 @@ const HeroSection = () => {
         </motion.h1>
         <motion.p
           {...animate}
-          transition={{ duration: 0.5 ,delay:0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className=" w-full"
         >
           one way to know whats ur next bite gonna be
@@ -41,12 +41,12 @@ const HeroSection = () => {
       <motion.div
         {...animate}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="relative w-4/5 m-auto overflow-hidden rounded-4xl my-10 "
+        className="relative w-full md:w-4/5 h-[500px] m-auto overflow-hidden rounded-4xl my-10 "
       >
         <Swiper
           modules={[Navigation]}
           navigation={{
-            nextEl: ".swiper-button-next",    
+            nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           }}
           loop={true}
