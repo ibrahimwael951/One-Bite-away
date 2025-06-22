@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
-
+import Navbar from "@/components/Navbar";
 // Configure the font
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -26,8 +26,8 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
+          <Navbar/>
           {children}
         </ThemeProvider>
       </body>

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -14,18 +14,39 @@ const images = [
   "/pancake.jpg",
   "/salad.jpg",
 ];
+const animate = {
+  initial: { opacity: 0, y: 60 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.5 },
+};
 const HeroSection = () => {
   return (
-    <section className="min-h-screen px-5 lg:px-16 pt-20  ">
+    <section className="min-h-screen px-5 lg:px-16  mt-8 ">
       <div className="text-center w-fit mx-auto">
-        <h1 className="text-7xl font-medium  w-full">One Bite away</h1>
-        <p className=" w-full">one way to know whats ur next bite gonna be</p>
+        <motion.h1
+          {...animate}
+          transition={{ duration: 0.5 }}
+          className="text-7xl font-medium  w-full"
+        >
+          One Bite away
+        </motion.h1>
+        <motion.p
+          {...animate}
+          transition={{ duration: 0.5 ,delay:0.3 }}
+          className=" w-full"
+        >
+          one way to know whats ur next bite gonna be
+        </motion.p>
       </div>
-      <div className="relative w-4/5 m-auto overflow-hidden rounded-4xl my-10">
+      <motion.div
+        {...animate}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="relative w-4/5 m-auto overflow-hidden rounded-4xl my-10 "
+      >
         <Swiper
           modules={[Navigation]}
           navigation={{
-            nextEl: ".swiper-button-next",
+            nextEl: ".swiper-button-next",    
             prevEl: ".swiper-button-prev",
           }}
           loop={true}
@@ -50,14 +71,14 @@ const HeroSection = () => {
           ))}
         </Swiper>
         <button className="swiper-button-prev absolute left-4 top-1/2 z-10 text-white p-2 px-3 rounded-full overflow-hidden">
-          ← 
-          <span className="absolute top-0 left-0 w-full h-full -z-10 bg-black opacity-45"/>
+          ←
+          <span className="absolute top-0 left-0 w-full h-full -z-10 bg-black opacity-45" />
         </button>
         <button className="swiper-button-next absolute right-4 top-1/2 z-10 text-white p-2 px-3 rounded-full overflow-hidden">
-          → 
-          <span className="absolute top-0 left-0 w-full h-full -z-10 bg-black opacity-45"/>
+          →
+          <span className="absolute top-0 left-0 w-full h-full -z-10 bg-black opacity-45" />
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 };
