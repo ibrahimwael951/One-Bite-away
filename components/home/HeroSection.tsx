@@ -12,13 +12,6 @@ const images = [
   "/grilled.jpg",
   "/break-Fast.jpg",
   "/see-Food.jpg",
-  "/pasta.jpg",
-  "/SaladS.jpg",
-  "/Desserts.jpg",
-  "/asian-food.jpg",
-  "/Juices.jpg",
-  "/vagen-food.jpg",
-  "/Soups.jpg",
 ];
 
 const HeroSection = () => {

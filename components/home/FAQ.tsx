@@ -54,7 +54,7 @@ const FAQ = () => {
                 onClick={() =>
                   setOpened(opened === item.question ? null : item.question)
                 }
-              >
+              >       
                 {item.question}
               </motion.button>
               {opened === item.question && (
