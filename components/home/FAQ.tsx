@@ -29,7 +29,7 @@ const faqs = [
   },
 ];
 const FAQ = () => {
-  const [opened, useOpened] = useState<string | null>(null);
+  const [opened, setOpened] = useState<string | null>(null);
 
   return (
     <section className="min-h-screen px-5 lg:px-16 py-2 mt-20">
@@ -52,7 +52,7 @@ const FAQ = () => {
                 whileHover={{ x: 10 }}
                 className=" text-start w-full p-4  text-xl md:text-lg dark:bg-neutral-800 dark:text-white text-black bg-neutral-200 rounded-2xl my-2"
                 onClick={() =>
-                  useOpened(opened === item.question ? null : item.question)
+                  setOpened(opened === item.question ? null : item.question)
                 }
               >
                 {item.question}
