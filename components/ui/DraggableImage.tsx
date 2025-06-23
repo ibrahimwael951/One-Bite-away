@@ -2,7 +2,7 @@
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-
+import { opacity } from "@/Data/animation";
 interface props {
   src: string;
   alt: string;
@@ -36,12 +36,7 @@ const DraggableImage: React.FC<props> = ({
       }}
       animate={controls}
       whileTap={{ scale: 1.1, zIndex: 10 }}
-      viewport={{
-        once: true,
-        amount: 0.5,
-      }}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { delay: delay } }}
+      {...opacity}
       transition={{ duration: 0.5 }}
       style={{
         top,

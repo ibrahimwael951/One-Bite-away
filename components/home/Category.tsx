@@ -6,7 +6,7 @@ import { FadeUp } from "@/Data/animation";
 //
 const Category = () => {
   const categoriesData = [
-    { name: "Fast Food", image: "/Burger.jpg" },
+    { name: "Fast Food", image: "/Fast-Food.jpg" },
     { name: "Grilled", image: "/grilled.jpg" },
     { name: "Breakfast", image: "/break-Fast.jpg" },
     { name: "Seafood", image: "/see-Food.jpg" },
@@ -16,26 +16,24 @@ const Category = () => {
     { name: "Asian", image: "/asian-food.jpg" },
     { name: "Juices", image: "/Juices.jpg" },
     { name: "Vegan", image: "/vagen-food.jpg" },
-    { name: "Soups", image: "/salad.jpg" },
+    { name: "Soups", image: "/Soups.jpg" },
   ];
 
   return (
-    <section className="min-h-screen px-5 lg:px-16    ">
-      <motion.h1 {...FadeUp} className="text-5xl mb-10">
+    <section className="min-h-screen px-5 lg:px-16  mt-20 md:mt-0  ">
+      <motion.h1 {...FadeUp} className="text-5xl mb-2 font-semibold">
         Just tap on what you feel like to
         <span className="text-yellow-500"> Bitting </span>
         today
       </motion.h1>
+      <motion.p {...FadeUp} className="mb-10">
+        Our menu is designed to satisfy your cravings and desires. 
+      </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 ">
         {categoriesData.map((Item, i) => (
-          <motion.div {...FadeUp}>
-            <ImageHover
-              key={i}
-              src={Item.image}
-              alt={Item.name}
-              title={Item.name}
-            />
+          <motion.div key={i} {...FadeUp}>
+            <ImageHover src={Item.image} alt={Item.name} title={Item.name} />
           </motion.div>
         ))}
       </div>

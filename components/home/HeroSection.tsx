@@ -6,44 +6,46 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { Navigation } from "swiper/modules";
-
+import { FadeUp } from "@/Data/animation";
 const images = [
-  "/Burger.jpg",
-  "/cake.jpg",
-  "/Spaghetti.jpg",
-  "/pancake.jpg",
-  "/salad.jpg",
+  "/Fast-Food.jpg",
+  "/grilled.jpg",
+  "/break-Fast.jpg",
+  "/see-Food.jpg",
+  "/pasta.jpg",
+  "/SaladS.jpg",
+  "/Desserts.jpg",
+  "/asian-food.jpg",
+  "/Juices.jpg",
+  "/vagen-food.jpg",
+  "/Soups.jpg",
 ];
-const animate = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.5 },
-};
+
 const HeroSection = () => {
   return (
     <section className="min-h-screen px-5 lg:px-16  mt-8 ">
       <div className="text-center w-fit mx-auto">
         <motion.h1
-          {...animate}
+          {...FadeUp}
           transition={{ duration: 0.5 }}
-          className="text-7xl font-medium  w-full"
+          className="text-7xl font-semibold  w-full"
         >
           One
-          <span className="text-yellow-500"> Bite </span>
+          <span className="text-yellow-500 "> Bite </span>
           away
         </motion.h1>
         <motion.p
-          {...animate}
+          {...FadeUp}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className=" w-full"
+          className=" w-full "
         >
           one way to know whats ur next bite gonna be
         </motion.p>
       </div>
       <motion.div
-        {...animate}
+        {...FadeUp}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="relative w-full md:w-4/5 h-[500px] m-auto overflow-hidden rounded-4xl my-10 "
+        className="relative w-full md:w-4/5 h-[500px] m-auto overflow-hidden rounded-4xl my-10 select-none "
       >
         <Swiper
           modules={[Navigation]}
@@ -65,8 +67,8 @@ const HeroSection = () => {
                 draggable={false}
                 src={item}
                 alt={`image number ${i + 1} of ${images.length} `}
-                width={1000}
-                height={1000}
+                width={2000}
+                height={2000}
                 className="object-cover w-full h-full"
               />
             </SwiperSlide>
