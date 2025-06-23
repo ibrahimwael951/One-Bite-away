@@ -12,7 +12,6 @@ interface props {
   right?: number;
   width?: number;
   height?: number;
-  delay?: number;
 }
 
 const DraggableImage: React.FC<props> = ({
@@ -24,7 +23,6 @@ const DraggableImage: React.FC<props> = ({
   alt,
   height = 200,
   width = 200,
-  delay = 0,
 }) => {
   const controls = useAnimation();
   return (
