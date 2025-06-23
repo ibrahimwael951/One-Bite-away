@@ -18,7 +18,7 @@ const animate = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.5 },
-}; 
+};
 const HeroSection = () => {
   return (
     <section className="min-h-screen px-5 lg:px-16  mt-8 ">
