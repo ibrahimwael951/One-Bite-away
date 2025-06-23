@@ -12,13 +12,16 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="text-5xl mb-2"
       >
-        easier way to bite ur food
+        Easiest way to 
+        <span className="text-yellow-500"> Choice </span> 
+        your
+        Next bite  
       </motion.h1>
       <motion.p
         viewport={{ once: true, amount: 0.5 }}
         initial={{ y: 60, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 ,delay:0.4}}
+        transition={{ duration: 0.5, delay: 0.4 }}
         className="ml-4 text-sm font-extralight"
       >
         i made this app to make ur life easier and can pick ur next bite (food)

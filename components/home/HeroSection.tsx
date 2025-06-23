@@ -18,7 +18,7 @@ const animate = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.5 },
-};
+}; 
 const HeroSection = () => {
   return (
     <section className="min-h-screen px-5 lg:px-16  mt-8 ">
@@ -28,7 +28,9 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="text-7xl font-medium  w-full"
         >
-          One Bite away
+          One
+          <span className="text-yellow-500"> Bite </span>
+          away
         </motion.h1>
         <motion.p
           {...animate}
