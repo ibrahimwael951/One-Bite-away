@@ -33,7 +33,7 @@ const DraggableImage: React.FC<props> = ({
         controls.start({ x: 0, y: 0 });
       }}
       animate={controls}
-      whileTap={{ scale: 1.1, zIndex: 10 }}
+      whileTap={{ scale: 1.1, zIndex: 10, transition:{duration:0.2} }}
       {...opacity}
       transition={{ duration: 0.5 }}
       style={{

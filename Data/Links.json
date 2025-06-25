@@ -1,6 +1,5 @@
 [
-  { "Title": "Home", "href": "/" },
-  { "Title": "About", "href": "/about" },
+  { "Title": "Home", "href": "/" },  
   { "Title": "Restaurants", "href": "/restaurants" },
   { "Title": "Cook", "href": "/cook" }
 ]
