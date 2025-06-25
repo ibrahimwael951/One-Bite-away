@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { Navigation } from "swiper/modules";
 import { FadeUp } from "@/Data/animation";
+import { useUser } from "@clerk/nextjs";
 const images = [
   "/Fast-Food.jpg",
   "/grilled.jpg",
@@ -15,6 +16,18 @@ const images = [
 ];
 
 const HeroSection = () => {
+  
+  const { isLoaded, isSignedIn } = useUser();
+ 
+  if (!isLoaded)
+    return (
+      <section className="min-h-screen px-5 flex justify-center items-center flex-col mb-10 ">
+        <h1 className="w-3/6 rounded-2xl  h-20 mb-2 animate-pulse bg-neutral-300 dark:bg-neutral-800" />
+        <p className="w-2/5 rounded-2xl  mb-2 h-7 animate-pulse bg-neutral-300 dark:bg-neutral-800 " />
+        <div className="h-96 w-4/5 rounded-2xl animate-pulse bg-neutral-300 dark:bg-neutral-800" />
+      </section>
+    );
+  if (isSignedIn) return null;
   return (
     <section className="min-h-screen px-5 lg:px-16  mt-8 ">
       <div className="text-center w-fit mx-auto">

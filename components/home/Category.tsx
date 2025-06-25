@@ -20,14 +20,14 @@ const Category = () => {
   ];
 
   return (
-    <section className="min-h-screen px-5 lg:px-16  mt-20 md:mt-0  ">
+    <section className="min-h-screen px-5 lg:px-16   my-16 ">
       <motion.h1 {...FadeUp} className="text-5xl mb-2 font-semibold">
         Just tap on what you feel like to
         <span className="text-yellow-500"> Bitting </span>
         today
       </motion.h1>
-      <motion.p {...FadeUp} className="mb-10">
-        Our menu is designed to satisfy your cravings and desires. 
+      <motion.p {...FadeUp} className="mb-10 ml-6">
+        Our menu is designed to satisfy your cravings and desires.
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 ">
