@@ -1,8 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-   images: {
-    remotePatterns: [new URL('https://www.themealdb.com/images/media/meals/**')],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.themealdb.com',
+        pathname: '/images/media/meals/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.themealdb.com',
+        pathname: '/images/category/**',
+      },
+    ],
   },
 };
 

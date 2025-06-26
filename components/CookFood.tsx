@@ -34,7 +34,7 @@ const CookFood: React.FC = () => {
 
         const results = await Promise.all(mealPromises);
         const allMeals = results.map((res) => res.meals[0]);
-  
+
         const uniqueMeals = Array.from(
           new Map(allMeals.map((meal) => [meal.idMeal, meal])).values()
         );
@@ -52,7 +52,7 @@ const CookFood: React.FC = () => {
 
   if (loading)
     return (
-      <section className="min-h-screen px-5 lg:px-10 mt-10">
+      <section className=" ">
         <h1 className="w-2/4 h-20 bg-neutral-300 dark:bg-neutral-800 animate-pulse rounded-2xl my-5" />
         <div className="w-full h-[500px] bg-neutral-300 dark:bg-neutral-800 animate-pulse rounded-2xl my-5" />
       </section>
@@ -75,10 +75,19 @@ const CookFood: React.FC = () => {
         ))}
       </div>
 
-      {ButtonVisible && (
+      {ButtonVisible ? (
         <CustomButton
           text="Show More"
           onclick={() => setVisibleCount((prev) => prev + 10)}
+          bg={true}
+        />
+      ) : (
+        <CustomButton
+          text="Reload page ?"
+          onclick={() => {
+            setTimeout(() => location.reload(), 500);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           bg={true}
         />
       )}

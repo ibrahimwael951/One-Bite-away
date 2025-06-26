@@ -1,5 +1,5 @@
 [
   { "Title": "Home", "href": "/" },  
-  { "Title": "Restaurants", "href": "/restaurants" },
-  { "Title": "Cook", "href": "/cook" }
+  { "Title": "Category", "href": "/category" },
+  { "Title": "Random Food", "href": "/random" }
 ]
