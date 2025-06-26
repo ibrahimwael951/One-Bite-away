@@ -6,7 +6,7 @@ import LinksData from "@/Data/Links.json";
 import { motion } from "framer-motion";
 const Footer = () => {
   return (
-    <footer className="w-full min-h-96 flex gap-y-14 flex-col md:flex-row  justify-between items-center p-10 bg-neutral-200 dark:bg-neutral-900">
+    <footer className="w-full min-h-96 flex gap-y-14 flex-col md:flex-row  justify-between items-center p-10 bg-neutral-200 dark:bg-neutral-900 overflow-hidden">
       <div className="flex flex-col items-center md:items-start  gap-6 justify-center">
         <h1 className="text-4xl font-semibold w-fit flex items-end justify-center">
           <Hamburger size={40} className="text-yellow-500" />
@@ -36,18 +36,18 @@ const Footer = () => {
         </h1>
 
         <form className="flex flex-col justify-center gap-2">
-          <div className="flex gap-2">
+          <div className="flex gap-2 w-full">
             <motion.input
               whileFocus={{ scale: 1.04 }}
               type="text"
               placeholder="Ur Name"
-              className="bg-yellow-500 rounded-2xl p-2 placeholder:text-black placeholder:opacity-70 text-black outline-none"
+              className="w-2/4 bg-yellow-500 rounded-2xl p-2 placeholder:text-black placeholder:opacity-70 text-black outline-none"
             />
             <motion.input
               whileFocus={{ scale: 1.04 }}
               type="text"
               placeholder="Ur Email"
-              className="bg-yellow-500 rounded-2xl p-2 placeholder:text-black placeholder:opacity-70 text-black outline-none"
+              className="w-2/4 bg-yellow-500 rounded-2xl p-2 placeholder:text-black placeholder:opacity-70 text-black outline-none"
             />
           </div>
           <motion.textarea

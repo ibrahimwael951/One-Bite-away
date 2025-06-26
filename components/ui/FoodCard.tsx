@@ -20,7 +20,6 @@ const FoodCard: React.FC<props> = ({ category, country, id, name, image }) => {
     window.addEventListener("resize", checkIfMobile);
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
-console.log(window.innerWidth)
   return (
     <motion.div {...FadeUp}>
       <Link href={`/food/${id}`}>
