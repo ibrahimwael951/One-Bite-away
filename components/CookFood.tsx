@@ -23,16 +23,31 @@ const CookFood: React.FC = () => {
   console.log("Total meals:", meals.length);
 
   useEffect(() => {
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.meals) {
-          setLoading(false);
-          SetMeals(data.meals);
-        }
-      })
-      .catch((error) => console.error("error in fetch data from API", error));
-    setLoading(false);
+    const fetchRandomMeals = async () => {
+      setLoading(true);
+      try {
+        const mealPromises = Array.from({ length: 20 }, () =>
+          fetch("https://www.themealdb.com/api/json/v1/1/random.php").then(
+            (res) => res.json()
+          )
+        );
+
+        const results = await Promise.all(mealPromises);
+        const allMeals = results.map((res) => res.meals[0]);
+  
+        const uniqueMeals = Array.from(
+          new Map(allMeals.map((meal) => [meal.idMeal, meal])).values()
+        );
+
+        SetMeals(uniqueMeals);
+      } catch (error) {
+        console.error("Error fetching random meals:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRandomMeals();
   }, []);
 
   if (loading)
@@ -47,10 +62,10 @@ const CookFood: React.FC = () => {
       <motion.h1 {...FadeUp} className="text-5xl font-semibold">
         Food would u <span className="text-yellow-500"> like </span> to bite{" "}
       </motion.h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 my-20 w-fit mx-auto">
+      <div className="grid grid-cols-1  lg:grid-cols-3 2xl:grid-cols-4 gap-5 my-20 w-fit mx-auto">
         {meals.slice(0, visibleCount).map((Item) => (
           <FoodCard
-            key={Item.idMeal}
+            key={`${Item.idMeal},${Item.strMeal}`}
             name={Item.strMeal}
             image={Item.strMealThumb}
             category={Item.strCategory}
