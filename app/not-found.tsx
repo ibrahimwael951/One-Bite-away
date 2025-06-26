@@ -33,8 +33,8 @@ export default function NotFound() {
       </div>
 
       <div className="flex justify-center items-center gap-5">
-        <CustomButton text="Home" textSize={24} href="/" bg={true} />
-        <CustomButton text="Support" textSize={24} href="/support" />
+        <CustomButton text="Home" textSize={18} href="/" bg={true} />
+        <CustomButton text="Support" textSize={18} href="/support" />
       </div>
       <motion.div 
       viewport={{once:true,amount:0.5}}

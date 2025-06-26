@@ -1,9 +1,10 @@
-"use client"; 
+"use client";
 import React, { useEffect, useState } from "react";
-import { Meal } from "@/types/Meal"; 
-import { motion, AnimatePresence } from "framer-motion";
+import { Meal } from "@/types/Meal";
+import { motion } from "framer-motion";
 import { FadeUp } from "@/Data/animation";
 import FoodCard from "./ui/FoodCard";
+import CustomButton from "./ui/CustomButton";
 const CookFood: React.FC = () => {
   const [meals, SetMeals] = useState<Meal[]>([]);
   const [loading, setLoading] = useState(true);
@@ -58,20 +59,14 @@ const CookFood: React.FC = () => {
           />
         ))}
       </div>
-      <AnimatePresence>
-        {ButtonVisible && (
-          <motion.button
-            {...FadeUp}
-            whileHover={{scale:1.04}}
-            whileTap={{scale:0.94}}
-            exit={{ opacity: 0, scale: 0 }}
-            className="mb-10 bg-yellow-500 text-xl p-2 rounded-2xl text-black   w-fit m-auto"
-            onClick={() => setVisibleCount((prev) => prev + 10)}
-          >
-            Show More
-          </motion.button>
-        )}
-      </AnimatePresence>
+
+      {ButtonVisible && (
+        <CustomButton
+          text="Show More"
+          onclick={() => setVisibleCount((prev) => prev + 10)}
+          bg={true}
+        />
+      )}
     </section>
   );
 };

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+body{
+  @apply selection:bg-yellow-500 selection:text-black
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
