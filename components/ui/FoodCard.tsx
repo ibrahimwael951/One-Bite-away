@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FadeUp } from "@/Data/animation";
 interface props {
   name: string;
   id: string;

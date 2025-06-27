@@ -27,7 +27,7 @@ export default function Page() {
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_API}/categories.php`)
+    fetch(`${process.env.NEXT_PUBLIC_API_API}categories.php`)
       .then((res) => res.json())
       .then((data) => setCategories(data.categories));
   }, []);
@@ -45,24 +45,26 @@ export default function Page() {
   return (
     <section className="min-h-screen px-5 lg:px-10 py-10">
       <div className="flex flex-col md:flex-row gap-2 justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-center md:text-start text-5xl font-bold">
           Search Meals by <span className="text-yellow-500"> Category </span>
         </h1>
         <Button
           variant="outline"
           onClick={() => setIsCategoryMenuOpen((b) => !b)}
-        >                      
+        >
           {isCategoryMenuOpen ? "Hide" : "Show"} Category
         </Button>
       </div>
 
       <AnimatePresence>
         {isCategoryMenuOpen && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10">
+          <motion.div
+            {...FadeUp}
+            exit={{ opacity: 0, y: -50, transition: { duration: 0.2 } }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10"
+          >
             {categories.map((category) => (
-              <motion.div
-                {...FadeUp}
-                exit={{ opacity: 0, y: -50, transition: { duration: 0.2 } }}
+              <div
                 key={category.idCategory}
                 className={`cursor-pointer border p-3 rounded-xl shadow-sm hover:shadow-md transition ${
                   selectedCategory === category.strCategory
@@ -74,9 +76,9 @@ export default function Page() {
                 <h2 className="text-center font-semibold mt-2">
                   {category.strCategory}
                 </h2>
-              </motion.div>
+              </div>
             ))}
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
 
