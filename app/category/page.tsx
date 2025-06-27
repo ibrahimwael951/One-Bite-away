@@ -45,11 +45,13 @@ export default function Page() {
   return (
     <section className="min-h-screen px-5 lg:px-10 py-10">
       <div className="flex flex-col md:flex-row gap-2 justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">Search Meals by Category</h1>
+        <h1 className="text-3xl font-bold">
+          Search Meals by <span className="text-yellow-500"> Category </span>
+        </h1>
         <Button
           variant="outline"
           onClick={() => setIsCategoryMenuOpen((b) => !b)}
-        >
+        >                      
           {isCategoryMenuOpen ? "Hide" : "Show"} Category
         </Button>
       </div>

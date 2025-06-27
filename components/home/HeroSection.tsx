@@ -29,7 +29,7 @@ const HeroSection = () => {
     );
   if (isSignedIn) return null;
   return (
-    <section className="min-h-screen px-5 lg:px-16  mt-8 ">
+    <section className="min-h-screen px-5 lg:px-16 mt-8 "> 
       <div className="text-center w-fit mx-auto">
         <motion.h1
           {...FadeUp}
@@ -42,7 +42,7 @@ const HeroSection = () => {
         </motion.h1>
         <motion.p
           {...FadeUp}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5  }}
           className=" w-full "
         >
           one way to know whats ur next bite gonna be
@@ -50,7 +50,7 @@ const HeroSection = () => {
       </div>
       <motion.div
         {...FadeUp}
-        transition={{ duration: 0.5, delay: 0.6 }}
+        transition={{ duration: 0.5 }}
         className="relative w-full md:w-4/5 h-[500px] m-auto overflow-hidden rounded-4xl my-10 select-none "
       >
         <Swiper
@@ -73,8 +73,8 @@ const HeroSection = () => {
                 draggable={false}
                 src={item}
                 alt={`image number ${i + 1} of ${images.length} `}
-                width={2000}
-                height={2000}
+                width={1000}
+                height={1000}
                 className="object-cover w-full h-full"
               />
             </SwiperSlide>

@@ -26,7 +26,7 @@ const Category = () => {
         <span className="text-yellow-500"> Bitting </span>
         today
       </motion.h1>
-      <motion.p {...FadeUp} className="mb-10 ml-6">
+      <motion.p {...FadeUp} className="mb-10 lg:ml-6">
         Our menu is designed to satisfy your cravings and desires.
       </motion.p>
 

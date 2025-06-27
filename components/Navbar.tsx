@@ -20,48 +20,55 @@ const Navbar = () => {
   const { isLoaded, isSignedIn } = useUser();
   const LinkPath = usePathname();
   return (
-    <nav className="relative w-full min-h-15 flex justify-between  lg:justify-evenly items-center px-5 overflow-y-visible overflow-x-hidden">
-      <Link href="/" className="text-2xl flex items-end w-fit gap-1 font-medium">
+    <nav className="relative w-full min-h-15 flex justify-between  lg:justify-between lg:px-28  2xl:px-60 items-center px-5 overflow-y-visible overflow-x-hidden">
+      <Link
+        href="/"
+        className="text-2xl flex items-end w-fit gap-1 font-medium"
+      >
         <Hamburger size={40} className="text-yellow-500" />
         OBA
       </Link>
 
-      <div className="hidden lg:flex gap-3 justify-center items-center overflow-hidden">
-        {LinksData.map((item, i) => (
-          <Link
-            key={i}
-            href={item.href}
-            className={`
+      {isSignedIn && (
+        <div className="hidden lg:flex gap-3 justify-center items-center overflow-hidden">
+          {LinksData.map((item, i) => (
+            <Link
+              key={i}
+              href={item.href}
+              className={`
             text-[18px]  font-medium
              ${LinkPath === item.href && "text-yellow-500 "}
             `}
-          >
-            <motion.div transition={{ duration: 0.2 }} whileHover={{ y: -5 }}>
-              {item.Title}
-            </motion.div> 
-          </Link>
-        ))}
+            >
+              <motion.div transition={{ duration: 0.2 }} whileHover={{ y: -5 }}>
+                {item.Title}
+              </motion.div>
+            </Link>
+          ))}
 
-        <ModeToggle />
-      </div>
-      <div className="flex gap-3 items-center ">
-        <div className="flex items-center gap-2   lg:hidden">
           <ModeToggle />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" >
-                <Menu size={35} />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {LinksData.map((Item) => (
-                <Link key={Item.Title} href={Item.href}>
-                  <DropdownMenuItem>{Item.Title}</DropdownMenuItem>
-                </Link>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
+      )}
+      <div className="flex gap-3 items-center ">
+        {isSignedIn && (
+          <div className="flex items-center gap-2   lg:hidden">
+            <ModeToggle />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu size={35} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {LinksData.map((Item) => (
+                  <Link key={Item.Title} href={Item.href}>
+                    <DropdownMenuItem>{Item.Title}</DropdownMenuItem>
+                  </Link>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        )}
 
         {isLoaded ? (
           isSignedIn ? (

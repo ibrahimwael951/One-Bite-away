@@ -19,15 +19,18 @@ const About = () => {
   if (isSignedIn) return null;
   return (
     <section className="min-h-screen px-5 lg:px-16 ">
-      <motion.h1 {...FadeUp} className="text-5xl flex items-end gap-2 mb-2 font-semibold">
-      <span className="text-yellow-500">
-        <Pizza size={50} />
-      </span>
-      About Us
+      <motion.h1
+        {...FadeUp}
+        className="text-5xl flex items-end gap-2 mb-2 font-semibold"
+      >
+        <span className="text-yellow-500">
+          <Pizza size={50} />
+        </span>
+        About Us
       </motion.h1>
-      <motion.p {...FadeUp} className="ml-6 text-xl font-extralight">
+      <motion.p {...FadeUp} className="lg:ml-6 text-xl font-extralight">
         <span className="text-yellow-500"> One Bite Away </span>, is just an app
-        <span className="text-yellow-500"> </span> 
+        <span className="text-yellow-500"> </span>
         to helps u to choice ur food So as not to lose your{" "}
         <span className="text-yellow-500"> mind </span> in thinking too much ,
         we are not <span className="text-yellow-500"> restaurant </span>, its
@@ -39,11 +42,6 @@ const About = () => {
       <ImagesSection />
     </section>
   );
-  <section className="min-h-screen px-5 lg:px-10 my-10  ">
-    <h1 className="flex items-end gap-2 text-5xl font-semibold">
-      
-    </h1>
-  </section>;
 };
 
-export default About; 
+export default About;
