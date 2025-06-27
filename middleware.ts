@@ -5,6 +5,7 @@ const isProtectedRoute = createRouteMatcher([
   "/category",
   "/random",
   "/country",
+  '/meal(.*)',
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
@@ -18,4 +19,4 @@ export const config = {
     // Always run for API routes
     "/(api|trpc)(.*)",
   ],
-};
+}; 

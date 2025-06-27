@@ -24,7 +24,7 @@ const FoodCard: React.FC<props> = ({ category, country, id, name, image }) => {
     initial={{opacity:0 , y:-50}}
     animate={{opacity:1, y:0}}
     >
-      <Link href={`/food/${id}`}>
+      <Link href={`/meal/${id}`}>
         <motion.div
           initial="rest"
           whileHover={isMobile? "rest":"hover"}
