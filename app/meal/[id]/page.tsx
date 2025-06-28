@@ -3,7 +3,11 @@ import { Meal } from "@/types/Meal";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { id: string };
+}) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_API}lookup.php?i=${params.id}`
   );
