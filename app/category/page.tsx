@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import FoodCard from "@/components/ui/FoodCard";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeUp } from "@/Data/animation";
+import { FadeUp, FadeUpAnimate } from "@/Data/animation";
 import { Button } from "@/components/ui/button";
 
 interface Meal {
@@ -59,7 +59,7 @@ export default function Page() {
       <AnimatePresence>
         {isCategoryMenuOpen && (
           <motion.div
-            {...FadeUp}
+            {...FadeUpAnimate}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.2 } }}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10"
           >

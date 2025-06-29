@@ -256,8 +256,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                 className="inline-block"
               >
                 <Button
-                  variant="outline"
-                  className="hover:bg-blue-500 hover:text-white transition-colors"
+                  variant="outline"  
                 >
                   View Source
                 </Button>

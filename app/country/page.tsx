@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import FoodCard from "@/components/ui/FoodCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeUp } from "@/Data/animation";
+import { FadeUpAnimate } from "@/Data/animation";
 interface Meal {
   idMeal: string;
   strMeal: string;
@@ -52,7 +52,7 @@ export default function Page() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            {...FadeUp}
+            {...FadeUpAnimate}
             exit={{ opacity: 0, y: -50, transition: { duration: 0.2 } }}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-10"
           >
