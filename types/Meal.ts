@@ -9,6 +9,7 @@ export interface Meal {
     strInstructions: string;
     strTags: string;
     strYoutube: string;
+    strSource:string;
     
     strIngredient1: string;
     strIngredient2: string;
