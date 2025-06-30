@@ -5,7 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// Configure the font
+import ScrollTopButton from "@/components/ScrollTopButton";
 const poppins = Poppins({
   weight: ["400", "700"],
   subsets: ["latin"],
@@ -28,6 +28,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
             {children}
+            <ScrollTopButton/>
             <Footer/>
           </ThemeProvider>
         </body>
