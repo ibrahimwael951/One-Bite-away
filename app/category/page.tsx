@@ -4,24 +4,12 @@ import FoodCard from "@/components/ui/FoodCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, FadeUpAnimate } from "@/Data/animation";
 import { Button } from "@/components/ui/button";
+import { Meal } from "@/types/Meal";
 
-interface Meal {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strCategory: string;
-  strArea: string;
-}
-
-interface Category {
-  idCategory: string;
-  strCategory: string;
-  strCategoryThumb: string;
-  strCategoryDescription: string;
-}
+ 
 
 export default function Page() {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<Meal[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [meals, setMeals] = useState<Meal[]>([]);
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(true);
@@ -98,6 +86,8 @@ export default function Page() {
                 category={selectedCategory}
                 id={meal.idMeal}
                 country={meal.strArea}
+                Instructions={meal.strInstructions}
+                Tags={meal.strTags}
               />
             ))}
           </div>

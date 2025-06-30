@@ -14,7 +14,7 @@ const ImageHover: React.FC<props> = ({ src, alt, title }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkIfMobile = () => setIsMobile(window.innerWidth <= 720);
+    const checkIfMobile = () => setIsMobile(window.innerWidth <= 1024);
     checkIfMobile();
     window.addEventListener("resize", checkIfMobile);
     return () => window.removeEventListener("resize", checkIfMobile);
@@ -36,7 +36,6 @@ const ImageHover: React.FC<props> = ({ src, alt, title }) => {
         className="rounded-lg w-full h-full object-cover"
       />
 
-      {/* Background overlay */}
       {isMobile ? (
         <div className="absolute top-0 left-0 h-full w-full bg-black opacity-50 rounded-lg" />
       ) : (
@@ -48,8 +47,6 @@ const ImageHover: React.FC<props> = ({ src, alt, title }) => {
           className="absolute top-0 left-0 h-full w-full bg-black rounded-lg"
         />
       )}
-
-      {/* Title */}
       {isMobile ? (
         <div className="absolute top-0 left-0 flex justify-center items-center w-full h-full text-4xl text-white font-semibold">
           {title}

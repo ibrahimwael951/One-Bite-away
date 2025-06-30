@@ -3,6 +3,9 @@
 body{
   @apply selection:bg-yellow-500 selection:text-black scroll-smooth
 }
+.scrollBar{
+  scrollbar-width:none;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

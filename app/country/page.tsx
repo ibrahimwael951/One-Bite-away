@@ -4,20 +4,12 @@ import FoodCard from "@/components/ui/FoodCard";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUpAnimate } from "@/Data/animation";
-interface Meal {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
-  strCountries: string;
-  strArea: string;
-}
-interface country {
-  strArea: string;
-}
+import { Meal } from "@/types/Meal";
+ 
 export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [meals, setMeals] = useState<Meal[]>([]);
-  const [countries, setCountries] = useState<country[]>([]);
+  const [countries, setCountries] = useState<Meal[]>([]);
   const [selectedCountries, setSelectedCountries] = useState<string | null>(
     null
   );
@@ -83,6 +75,8 @@ export default function Page() {
             country={selectedCountries || "No Data"}
             name={meal.strMeal}
             image={meal.strMealThumb}
+            Instructions={meal.strInstructions}
+            Tags={meal.strTags || undefined}
           />
         ))}
       </div>

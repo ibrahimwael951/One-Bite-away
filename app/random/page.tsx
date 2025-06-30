@@ -52,23 +52,25 @@ export default function Page() {
     return (
       <section className="  px-5 lg:px-10">
         <h1 className="w-2/4 h-20 bg-neutral-300 dark:bg-neutral-800 animate-pulse rounded-2xl my-5" />
-        <div className="w-full h-[500px] bg-neutral-300 dark:bg-neutral-800 animate-pulse rounded-2xl my-5" />
+        <div className="w-full h-[500px] bg-neutral-300 dark:bg-neutral-800 animate-pulse rounded-2xl my-5" /> 
       </section>
     );
-  return (
+  return (  
     <section className="min-h-screen  px-5 lg:px-10 mt-10 flex flex-col">
       <motion.h1 {...FadeUp} className="text-5xl font-semibold">
         Food would u <span className="text-yellow-500"> like </span> to bite{" "}
       </motion.h1>
       <div className="grid grid-cols-1  lg:grid-cols-3 2xl:grid-cols-4 gap-5 mt-10 w-fit mx-auto">
-        {meals.slice(0, visibleCount).map((Item) => (
+        {meals.slice(0, visibleCount).map((meal) => (
           <FoodCard
-            key={`${Item.idMeal},${Item.strMeal}`}
-            name={Item.strMeal}
-            image={Item.strMealThumb}
-            category={Item.strCategory}
-            id={Item.idMeal}
-            country={Item.strArea}
+            key={`${meal.idMeal},${meal.strMeal}`}
+            name={meal.strMeal}
+            image={meal.strMealThumb}
+            category={meal.strCategory}
+            id={meal.idMeal}
+            country={meal.strArea}
+            Instructions={meal.strInstructions}
+            Tags={meal.strTags}
           />
         ))}
       </div>

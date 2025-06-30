@@ -4,12 +4,16 @@ export interface Meal {
     strMealThumb: string;
    
     strMealAlternate: string;
-    strCategory: string;
     strArea: string;
     strInstructions: string;
     strTags: string;
     strYoutube: string;
     strSource:string;
+
+    idCategory: string;
+    strCategory: string;
+    strCategoryThumb: string;
+    strCategoryDescription: string;
     
     strIngredient1: string;
     strIngredient2: string;
