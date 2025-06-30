@@ -67,7 +67,7 @@ export default function Page() {
             <p className="text-lg dark:text-neutral-400 text-neutral-600 text-center md:text-start">
               Showing results for: 
               <span className="font-semibold text-yellow-600 ml-2   "> 
-                 " {mealQuery} "
+                  {mealQuery} 
               </span>
             </p>
           )}
