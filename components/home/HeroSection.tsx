@@ -29,7 +29,7 @@ const HeroSection = () => {
     );
   if (isSignedIn) return null;
   return (
-    <section className="min-h-screen px-5 lg:px-16 mt-8 "> 
+    <section id="Home" className="min-h-screen px-5 lg:px-16 mt-8 "> 
       <div className="text-center w-fit mx-auto">
         <motion.h1
           {...FadeUp}

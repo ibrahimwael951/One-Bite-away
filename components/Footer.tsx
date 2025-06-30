@@ -4,7 +4,9 @@ import Link from "next/link";
 import { Hamburger } from "lucide-react";
 import LinksData from "@/Data/Links.json";
 import { motion } from "framer-motion";
+import { useUser } from "@clerk/nextjs";
 const Footer = () => {
+  const { isSignedIn } = useUser();
   return (
     <footer className="w-full min-h-96 flex gap-y-14 flex-col md:flex-row  justify-between items-center p-10 bg-neutral-200 dark:bg-neutral-900 overflow-hidden">
       <div className="flex flex-col items-center md:items-start  gap-6 justify-center">
@@ -14,17 +16,37 @@ const Footer = () => {
         </h1>
 
         <div className="text-4xl font-semibold flex flex-col gap-2 w-fit ml-5">
-          {LinksData.map((item, i) => (
-            <Link key={i} href={item.href} className=" hover:text-yellow-500">
-              <motion.div
-                transition={{ duration: 0.2 }}
-                whileHover={{ y: -5 }}
-                className="w-full text-center md:text-start opacity-70 "
-              >
-                {item.Title}
-              </motion.div>
-            </Link>
-          ))}
+          {isSignedIn
+            ? LinksData.SignedIn.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className=" hover:text-yellow-500"
+                >
+                  <motion.div
+                    transition={{ duration: 0.2 }}
+                    whileHover={{ y: -5 }}
+                    className="w-full text-center md:text-start opacity-70 "
+                  >
+                    {item.Title}
+                  </motion.div>
+                </Link>
+              ))
+            : LinksData.notSignedIn.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className=" hover:text-yellow-500"
+                >
+                  <motion.div
+                    transition={{ duration: 0.2 }}
+                    whileHover={{ y: -5 }}
+                    className="w-full text-center md:text-start opacity-70 "
+                  >
+                    {item.Title}
+                  </motion.div>
+                </Link>
+              ))}
         </div>
         <p className="text-sm opacity-65">© 2025 Ibrahim Wael</p>
       </div>
@@ -57,7 +79,7 @@ const Footer = () => {
           />
           <motion.button
             whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.96 }} 
+            whileTap={{ scale: 0.96 }}
             type="submit"
             className="p-3 w-full border border-yellow-500 rounded-2xl hover:bg-yellow-500"
           >

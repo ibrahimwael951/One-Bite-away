@@ -20,7 +20,7 @@ const Category = () => {
   ];
 
   return (
-    <section className="min-h-screen px-5 lg:px-16   my-16 ">
+    <section id="category" className="min-h-screen px-5 lg:px-16   my-16 ">
       <motion.h1 {...FadeUp} className="text-5xl mb-2 font-semibold">
         Just tap on what you feel like to
         <span className="text-yellow-500"> Bitting </span>

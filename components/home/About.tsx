@@ -18,7 +18,7 @@ const About = () => {
     );
   if (isSignedIn) return null;
   return (
-    <section className="min-h-screen px-5 lg:px-16 ">
+    <section  id="About" className="min-h-screen px-5 lg:px-16 ">
       <motion.h1
         {...FadeUp}
         className="text-5xl flex items-end gap-2 mb-2 font-semibold"

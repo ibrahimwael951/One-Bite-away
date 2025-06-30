@@ -44,7 +44,7 @@ const FAQ = () => {
     );
   if (isSignedIn) return null;
   return (
-    <section className="min-h-screen px-5 lg:px-16 py-2 mt-20">
+    <section id="FAQ" className="min-h-screen px-5 lg:px-16 py-2 mt-20">
       <h1 className="text-5xl font-semibold">
         any
         <span className="text-yellow-500"> questions? </span>. Yes!

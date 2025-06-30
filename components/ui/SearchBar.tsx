@@ -107,7 +107,7 @@ const SearchBar: React.FC<Props> = ({ Page = false }) => {
           placeholder="Search for Meals..."
         />
         {Page && (
-          <Link href={`/search?meal=${inputValue}`}>
+          <Link href={inputValue.length >= 1 ? `/search?meal=${inputValue}`:``}>
             <Button variant="outline">
               <Search />
             </Button>

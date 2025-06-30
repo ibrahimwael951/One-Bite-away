@@ -152,7 +152,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
   }
 
   return (
-    <section className="min-h-screen px-5 py-10 max-w-7xl mx-auto">
+    <section className="min-h-screen px-5 py-10 max-w-7xl mx-auto overflow-hidden">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -178,6 +178,37 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
             className="w-full h-72 md:h-96 rounded-xl object-cover shadow-lg"
             priority
           />
+          <div className="flex gap-5 items-center justify-center mt-5">
+            {meal.strYoutube && (
+              <div>
+                <a
+                  href={meal.strYoutube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Button  
+                    variant="outline"
+                  >
+                    Watch on YouTube 
+                  </Button>
+                </a>
+              </div>
+            )}
+
+            {meal.strSource && (
+              <div>
+                <a
+                  href={meal.strSource}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Button variant="outline">View Source</Button>
+                </a>
+              </div>
+            )}
+          </div>
         </motion.div>
 
         <motion.div
@@ -228,41 +259,6 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
               {meal.strInstructions}
             </p>
           </div>
-
-          {meal.strYoutube && (
-            <div className="pt-4">
-              <a
-                href={meal.strYoutube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Button
-                  variant="outline"
-                  className="hover:bg-yellow-500 hover:text-white transition-colors"
-                >
-                  Watch on YouTube
-                </Button>
-              </a>
-            </div>
-          )}
-
-          {meal.strSource && (
-            <div>
-              <a
-                href={meal.strSource}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Button
-                  variant="outline"  
-                >
-                  View Source
-                </Button>
-              </a>
-            </div>
-          )}
         </motion.div>
       </div>
     </section>

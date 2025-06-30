@@ -1,6 +1,14 @@
-[
+{ "SignedIn":[
   { "Title": "Home", "href": "/" },  
   { "Title": "Category", "href": "/category" },
   { "Title": "Country ", "href": "/country" },
   { "Title": "Random", "href": "/random" }
+],
+"notSignedIn":[
+  { "Title": "Home", "href": "/#Home" },  
+  { "Title": "Category", "href": "/#category" },
+  { "Title": "About", "href": "/#About" },
+  { "Title": "FAQ", "href": "/#FAQ" },
+  { "Title": "Random", "href": "/#Random" }
 ]
+}
