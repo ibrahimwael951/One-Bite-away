@@ -123,13 +123,9 @@ function SearchFun() {
 }
 
 export default function Page() {
-  <Suspense
-    fallback={
-      <div className="flex justify-center items-center min-w-screen">
-        We adjust ur Search page :)
-      </div>
-    }
-  >
-    <SearchFun />
-  </Suspense>;
+  return (
+    <Suspense>
+      <SearchFun />
+    </Suspense>
+  );
 }
