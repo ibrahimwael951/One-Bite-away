@@ -31,10 +31,10 @@ function SearchFun() {
               className={` ${!byNameOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
-                setByNameOpened(true), 
+                setByNameOpened(true);
                 setCategoryOpened(false);
                 setByCountryOpened(false);
-              }}
+              }} 
             >
               By Name
             </Button>
@@ -43,7 +43,7 @@ function SearchFun() {
               className={` ${!categoryOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
-                setCategoryOpened(true), 
+                setCategoryOpened(true);
                 setByNameOpened(false);
                 setByCountryOpened(false);
               }}
@@ -55,7 +55,7 @@ function SearchFun() {
               className={` ${!byCountryOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
-                setByCountryOpened(true),
+                setByCountryOpened(true);
                 setByNameOpened(false);
                 setCategoryOpened(false);
               }}
