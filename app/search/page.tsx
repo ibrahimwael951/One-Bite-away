@@ -32,6 +32,18 @@ function SearchFun() {
               variant="outline"
               onClick={() => {
                 setByNameOpened(true);
+                setCategoryOpened(true);
+                setByCountryOpened(true);
+              }} 
+            >
+              All
+            </Button>
+            <Button
+              title="Close Category section"
+              className={` ${!byNameOpened && "opacity-50"}`}
+              variant="outline"
+              onClick={() => {
+                setByNameOpened(true);
                 setCategoryOpened(false);
                 setByCountryOpened(false);
               }} 
