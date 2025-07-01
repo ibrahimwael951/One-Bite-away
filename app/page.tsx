@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <About />
-      <RandomFood/>    s
+      <RandomFood/>
       <Category />
       <FAQ />
     </main>
