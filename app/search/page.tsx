@@ -25,21 +25,20 @@ function SearchFun() {
               <SearchBar Page={true} />
             </div>
           </div>
-          <div className="w-full flex  justify-center items-center  gap-5 p-5">
+          <div className="w-full flex flex-wrap justify-center items-center  gap-5 p-5">
             <Button
-              title="Close Category section"
-              className={` ${!byNameOpened && "opacity-50"}`}
+              title="Open All Search Sections"
               variant="outline"
               onClick={() => {
                 setByNameOpened(true);
                 setCategoryOpened(true);
-                setByCountryOpened(true);
+                setByCountryOpened(true);  
               }} 
             >
               All
             </Button>
             <Button
-              title="Close Category section"
+              title="Search By Name"
               className={` ${!byNameOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
@@ -51,7 +50,7 @@ function SearchFun() {
               By Name
             </Button>
             <Button
-              title="Close Category section"
+              title="Search By Category"
               className={` ${!categoryOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
@@ -63,7 +62,7 @@ function SearchFun() {
               By Category
             </Button>
             <Button
-              title="Close Category section"
+              title="Search By Country"
               className={` ${!byCountryOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
