@@ -10,9 +10,7 @@ export default function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [meals, setMeals] = useState<Meal[]>([]);
   const [countries, setCountries] = useState<Meal[]>([]);
-  const [selectedCountries, setSelectedCountries] = useState<string | null>(
-    null
-  );
+  const [selectedCountries, setSelectedCountries] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_API}list.php?a=list`)
