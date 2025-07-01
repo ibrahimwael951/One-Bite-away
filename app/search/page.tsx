@@ -31,7 +31,8 @@ function SearchFun() {
               className={` ${!byNameOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
-                setByNameOpened(true), setCategoryOpened(false);
+                setByNameOpened(true), 
+                setCategoryOpened(false);
                 setByCountryOpened(false);
               }}
             >
@@ -42,7 +43,8 @@ function SearchFun() {
               className={` ${!categoryOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
-                setCategoryOpened(true), setByNameOpened(false);
+                setCategoryOpened(true), 
+                setByNameOpened(false);
                 setByCountryOpened(false);
               }}
             >
@@ -53,7 +55,8 @@ function SearchFun() {
               className={` ${!byCountryOpened && "opacity-50"}`}
               variant="outline"
               onClick={() => {
-                setByCountryOpened(true), setByNameOpened(false);
+                setByCountryOpened(true),
+                setByNameOpened(false);
                 setCategoryOpened(false);
               }}
             >
