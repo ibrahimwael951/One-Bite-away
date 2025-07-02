@@ -13,3 +13,9 @@ export const opacity = {
   whileInView: { opacity: 1 },
   viewport: { once: true, amount: 0.5 },
 };
+ 
+export const opacityAnimate ={
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+}

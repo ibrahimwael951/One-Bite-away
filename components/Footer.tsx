@@ -10,7 +10,7 @@ const Footer = () => {
   const [success, setSuccess] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [massage, setMassage] = useState("");
+  const [message, setMessage] = useState("");
   const [error,setError]=useState(false)
   
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -27,7 +27,7 @@ const Footer = () => {
         from: "One-Bite-Away",
         name,
         email,
-        massage,
+        message,
       }),
     });
 
@@ -36,7 +36,7 @@ const Footer = () => {
       console.log("Message sent successfully!");
       setName("");
       setEmail("");
-      setMassage("");
+      setMessage("");
       setSuccess(true);             
     }
     else{
@@ -106,8 +106,8 @@ const Footer = () => {
                 exit={{ opacity: 0 }}
                 className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center bg-yellow-500 rounded-2xl  "
               >
-                <h1 className="text-2xl font-semibold">Massage Send Successfully :)</h1>
-                <p className="text-lg">Ty for Ur Massage </p>
+                <h1 className="text-2xl font-semibold">message Send Successfully :)</h1>
+                <p className="text-lg">Ty for Ur message </p>
               </motion.div>
             )}
             {error && (
@@ -146,11 +146,11 @@ const Footer = () => {
           </div>
           <motion.textarea
             required
-            name="massage"
-            value={massage}
-            onChange={(e) => setMassage(e.target.value)}
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             whileFocus={{ scale: 1.01 }}
-            placeholder="Ur Massage"
+            placeholder="Ur message"
             className="border-2 border-yellow-500 rounded-2xl p-2 outline-none"
           />
           <motion.button
