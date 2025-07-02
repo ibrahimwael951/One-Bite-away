@@ -1,6 +1,5 @@
 "use client";
 import React, { FormEvent, useState } from "react";
-import Link from "next/link";
 import { Bug, Heart, Minimize } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeUp, opacityAnimate } from "@/Data/animation";
