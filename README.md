@@ -9,11 +9,12 @@ u can search by category , countries , random meals and even u can search by nam
 its easy to use the hole app , and u can see Meal Details with Ingredients and Instructions , what are u waiting for go and cook and enjoy with ur bite <3
 
 ## Future 
-- best ui/ux design 
-- easy to use for client and developer 
-- auth with clerk and its easy to sign in and logout
+- Best ui/ux design 
+- Easy to use for client and developer 
+- Auth with clerk and its easy to sign in and logout
+- Search by Name , category and country 
 - API collecting some dishes from all countries 
-- web can answer ur every day Question (what i will eat today)
+- Web can answer ur every day Question (what i will eat today)
 
 ## Tools  and Dependencies 
 - Next.js ( TypeScript <3 ) 

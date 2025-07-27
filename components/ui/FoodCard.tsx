@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
@@ -27,12 +26,10 @@ const FoodCard: React.FC<props> = ({
       <Link href={`/meal/${id}`}>
         <div className=" bg-neutral-200 dark:bg-neutral-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
           <div className="aspect-w-16 aspect-h-12">
-            <Image
+            <img
               src={image}
               alt={name}
               className="w-full h-48 object-cover rounded-t-xl"
-              width={500}
-              height={500}
               draggable={false}
             />
           </div>

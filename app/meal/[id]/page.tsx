@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState, use } from "react";
 import { Meal } from "@/types/Meal";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import CustomButton from "@/components/ui/CustomButton";
@@ -169,14 +168,11 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="lg:w-1/2"
         >
-          <Image
-            width={500}
-            height={500}
+          <img
             draggable={false}
             src={meal.strMealThumb}
             alt={meal.strMeal}
             className="w-full h-72 md:h-96 rounded-xl object-cover shadow-lg"
-            priority
           />
           <div className="flex gap-5 items-center justify-center mt-5">
             {meal.strYoutube && (
@@ -187,11 +183,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button  
-                    variant="outline"
-                  >
-                    Watch on YouTube 
-                  </Button>
+                  <Button variant="outline">Watch on YouTube</Button>
                 </a>
               </div>
             )}
