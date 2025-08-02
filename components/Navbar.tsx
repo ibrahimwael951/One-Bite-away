@@ -36,46 +36,23 @@ const Navbar = () => {
         <SearchBar />
         <div className="flex gap-3">
           <div className="hidden lg:flex gap-3 justify-center items-center overflow-hidden">
-            {isLoaded
-              ? isSignedIn
-                ? LinksData.SignedIn.map((item, i) => (
-                    <Link
-                      key={i}
-                      href={item.href}
-                      className={`
+            {LinksData.SignedIn.map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className={`
               text-[18px]  font-medium
               ${LinkPath === item.href && "text-yellow-500 "}
               `}
-                    >
-                      <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }} 
-                        transition={{ duration: 0.2 }}
-                        whileHover={{ y: -5 }}
-                      >
-                        {item.Title}
-                      </motion.div>
-                    </Link>
-                  ))
-                : LinksData.notSignedIn.map((item, i) => (
-                    <Link
-                      key={i}
-                      href={item.href}
-                      className={`
-              text-[18px]  font-medium
-              ${LinkPath === item.href && "text-yellow-500 "}
-              `}
-                    >
-                      <motion.div
-                        transition={{ duration: 0.2 }}
-                        whileHover={{ y: -5 }}
-                      >
-                        {item.Title}
-                      </motion.div>
-                    </Link>
-                  ))
-              : null}
+              >
+                <motion.div
+                  transition={{ duration: 0.2 }}
+                  whileHover={{ y: -5 }}
+                >
+                  {item.Title}
+                </motion.div>
+              </Link>
+            ))}
 
             <ModeToggle />
           </div>
